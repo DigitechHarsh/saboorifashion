@@ -8,19 +8,21 @@ export interface Product {
   description: string;
   price: number;
   wholesale_price: number;
-  price_on_enquiry: boolean;
+  price_on_enquiry?: boolean;
   moq: number;
   fabric: string;
   work_type: string;
   occasion: string;
   available_colors: string;
-  available_sizes: string;
-  stock_status: 'in_stock' | 'made_to_order' | 'out_of_stock';
+  available_sizes?: string;
+  stock_status?: 'in_stock' | 'made_to_order' | 'out_of_stock';
   primary_image: string;
-  images: string[];
-  is_featured: boolean;
-  is_new_arrival: boolean;
-  is_bestseller: boolean;
+  images?: string[];
+  is_featured?: boolean;
+  is_new_arrival?: boolean;
+  is_bestseller?: boolean;
+  is_active?: boolean;
+  created_at?: string;
   category_name?: string;
   category_slug?: string;
   subcategory_name?: string;
@@ -35,6 +37,8 @@ export interface Category {
   image: string;
   display_order: number;
   product_count?: number;
+  is_active?: boolean;
+  created_at?: string;
   subcategories?: Subcategory[];
 }
 

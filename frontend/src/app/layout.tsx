@@ -1,12 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ShopProvider } from '@/lib/context';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import EnquiryDrawer from '@/components/EnquiryDrawer';
-import QuickViewModal from '@/components/QuickViewModal';
-import WholesaleModal from '@/components/WholesaleModal';
-import FloatingActions from '@/components/FloatingActions';
+import MainLayoutWrapper from '@/components/MainLayoutWrapper';
 
 export const metadata: Metadata = {
   title: "Saboori Fashion Surat | Women's Ethnic Wear Manufacturer & Wholesaler",
@@ -45,15 +40,9 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-screen flex flex-col font-sans bg-[#FAF7F2] text-[#1F1E1D] selection:bg-brand-gold/30 selection:text-brand-darkMaroon">
         <ShopProvider>
-          <Navbar />
-          <main className="flex-1 pb-20 md:pb-0">
+          <MainLayoutWrapper>
             {children}
-          </main>
-          <Footer />
-          <EnquiryDrawer />
-          <QuickViewModal />
-          <WholesaleModal />
-          <FloatingActions />
+          </MainLayoutWrapper>
         </ShopProvider>
       </body>
     </html>
