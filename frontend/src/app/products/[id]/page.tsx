@@ -217,37 +217,37 @@ export default function ProductDetailPage() {
       </div>
 
       {/* Tabs Section (Product Details / Wholesale Terms / Dispatch) */}
-      <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6">
-        <div className="flex gap-4 border-b border-gray-200">
+      <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-200 shadow-sm space-y-6">
+        <div className="flex gap-2 sm:gap-4 border-b border-gray-200 overflow-x-auto pb-1 sm:pb-0 whitespace-nowrap">
           <button
             onClick={() => setActiveTab('details')}
-            className={`pb-3 text-sm font-bold border-b-2 transition-colors ${
+            className={`pb-3 text-xs sm:text-sm font-bold border-b-2 transition-colors ${
               activeTab === 'details'
                 ? 'border-brand-maroon text-brand-maroon'
                 : 'border-transparent text-gray-500 hover:text-gray-900'
             }`}
           >
-            Product Overview & Fabric Care
+            Overview & Care
           </button>
           <button
             onClick={() => setActiveTab('wholesale')}
-            className={`pb-3 text-sm font-bold border-b-2 transition-colors ${
+            className={`pb-3 text-xs sm:text-sm font-bold border-b-2 transition-colors ${
               activeTab === 'wholesale'
                 ? 'border-brand-maroon text-brand-maroon'
                 : 'border-transparent text-gray-500 hover:text-gray-900'
             }`}
           >
-            B2B Wholesale Ordering Terms
+            Wholesale Terms
           </button>
           <button
             onClick={() => setActiveTab('shipping')}
-            className={`pb-3 text-sm font-bold border-b-2 transition-colors ${
+            className={`pb-3 text-xs sm:text-sm font-bold border-b-2 transition-colors ${
               activeTab === 'shipping'
                 ? 'border-brand-maroon text-brand-maroon'
                 : 'border-transparent text-gray-500 hover:text-gray-900'
             }`}
           >
-            Surat Dispatch & Logistics
+            Surat Logistics
           </button>
         </div>
 

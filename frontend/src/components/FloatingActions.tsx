@@ -29,18 +29,18 @@ export default function FloatingActions() {
       </div>
 
       {/* Mobile Bottom Sticky Action Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-2xl py-2 px-3">
-        <div className="grid grid-cols-4 gap-2 text-center">
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-2xl pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] px-2 sm:px-4">
+        <div className="grid grid-cols-4 gap-1 text-center max-w-md mx-auto">
           
           {/* Call Now */}
           <a
             href="tel:+918780331600"
-            className="flex flex-col items-center justify-center p-1 rounded-lg text-gray-700 hover:text-brand-maroon"
+            className="flex flex-col items-center justify-center p-1 rounded-xl text-gray-700 hover:text-brand-maroon active:scale-95 transition-transform"
           >
-            <div className="w-7 h-7 rounded-full bg-brand-cream flex items-center justify-center text-brand-maroon">
+            <div className="w-8 h-8 rounded-full bg-brand-cream flex items-center justify-center text-brand-maroon shadow-xs">
               <Phone className="w-3.5 h-3.5" />
             </div>
-            <span className="text-[10px] font-bold mt-1">Call Now</span>
+            <span className="text-[10px] font-bold mt-1 text-gray-800">Call Surat</span>
           </a>
 
           {/* WhatsApp Direct */}
@@ -48,36 +48,36 @@ export default function FloatingActions() {
             href="https://wa.me/918780331600?text=Hello%20Saboori%20Fashion%2C%20I%20want%20to%20inquire%20about%20wholesale%20catalogs."
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center p-1 rounded-lg text-green-700"
+            className="flex flex-col items-center justify-center p-1 rounded-xl text-green-700 active:scale-95 transition-transform"
           >
-            <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+            <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 shadow-xs">
               <MessageSquare className="w-3.5 h-3.5 fill-current" />
             </div>
-            <span className="text-[10px] font-bold mt-1">WhatsApp</span>
+            <span className="text-[10px] font-bold mt-1 text-green-800">WhatsApp</span>
           </a>
 
           {/* PDF Catalog */}
           <button
             onClick={() => setIsWholesaleModalOpen(true)}
-            className="flex flex-col items-center justify-center p-1 rounded-lg text-gray-700 hover:text-brand-maroon"
+            className="flex flex-col items-center justify-center p-1 rounded-xl text-gray-700 hover:text-brand-maroon active:scale-95 transition-transform"
           >
-            <div className="w-7 h-7 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-darkMaroon">
+            <div className="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-darkMaroon shadow-xs">
               <Download className="w-3.5 h-3.5" />
             </div>
-            <span className="text-[10px] font-bold mt-1">B2B PDF</span>
+            <span className="text-[10px] font-bold mt-1 text-gray-800">B2B PDF</span>
           </button>
 
           {/* Quote List Drawer */}
           <button
             onClick={() => setIsEnquiryDrawerOpen(true)}
-            className="relative flex flex-col items-center justify-center p-1 rounded-lg text-brand-maroon"
+            className="relative flex flex-col items-center justify-center p-1 rounded-xl text-brand-maroon active:scale-95 transition-transform"
           >
-            <div className="w-7 h-7 rounded-full bg-brand-maroon flex items-center justify-center text-brand-gold">
+            <div className="w-8 h-8 rounded-full bg-brand-maroon flex items-center justify-center text-brand-gold shadow-xs">
               <ShoppingBag className="w-3.5 h-3.5" />
             </div>
-            <span className="text-[10px] font-bold mt-1">Quote List</span>
+            <span className="text-[10px] font-bold mt-1 text-brand-maroon">Quote List</span>
             {totalCount > 0 && (
-              <span className="absolute top-0 right-5 bg-brand-gold text-brand-darkMaroon text-[9px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center shadow">
+              <span className="absolute top-0 right-3.5 bg-brand-gold text-brand-darkMaroon text-[9px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center shadow">
                 {totalCount}
               </span>
             )}

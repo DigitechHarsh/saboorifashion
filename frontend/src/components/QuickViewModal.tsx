@@ -48,12 +48,12 @@ export default function QuickViewModal() {
           {/* Close Button */}
           <button
             onClick={() => setQuickViewProduct(null)}
-            className="absolute top-4 right-4 z-20 p-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition-colors"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 p-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 sm:p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 p-4 sm:p-6 md:p-8">
             {/* Gallery Column */}
             <div className="space-y-3">
               <div className="aspect-[3/4] w-full rounded-xl overflow-hidden bg-gray-100 border border-gray-200">

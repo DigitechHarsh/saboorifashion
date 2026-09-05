@@ -86,13 +86,13 @@ export default function EnquiryDrawer() {
         />
 
         {/* Drawer Panel */}
-        <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+        <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 250 }}
-            className="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between"
+            className="w-screen max-w-full sm:max-w-md bg-white shadow-2xl flex flex-col justify-between"
           >
             {/* Header */}
             <div className="p-4 sm:p-5 border-b border-gray-100 flex items-center justify-between bg-brand-cream">

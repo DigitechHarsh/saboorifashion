@@ -31,44 +31,44 @@ export default function HomePage() {
 
       {/* 2. Highlight Strip (Factory Direct Trust Indicators) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-10 relative z-20">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-5 sm:p-6 bg-white rounded-2xl shadow-xl border border-brand-gold/30">
-          <div className="flex items-center gap-3.5 p-2">
-            <div className="w-12 h-12 rounded-xl bg-brand-cream text-brand-maroon flex items-center justify-center shrink-0 border border-brand-maroon/10">
-              <Factory className="w-6 h-6" />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-6 bg-white rounded-2xl shadow-xl border border-brand-gold/30">
+          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1.5 sm:p-2">
+            <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-brand-cream text-brand-maroon flex items-center justify-center shrink-0 border border-brand-maroon/10">
+              <Factory className="w-4 h-4 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h3 className="font-serif font-bold text-gray-900 text-sm sm:text-base">Surat Manufacturer</h3>
-              <p className="text-xs text-gray-500">Direct factory rates, zero middlemen</p>
+              <h3 className="font-serif font-bold text-gray-900 text-xs sm:text-base">Surat Mill Direct</h3>
+              <p className="text-[10px] sm:text-xs text-gray-500 hidden xs:block">Zero middlemen margins</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3.5 p-2">
-            <div className="w-12 h-12 rounded-xl bg-brand-cream text-brand-maroon flex items-center justify-center shrink-0 border border-brand-maroon/10">
-              <Truck className="w-6 h-6" />
+          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1.5 sm:p-2">
+            <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-brand-cream text-brand-maroon flex items-center justify-center shrink-0 border border-brand-maroon/10">
+              <Truck className="w-4 h-4 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h3 className="font-serif font-bold text-gray-900 text-sm sm:text-base">Pan-India Supply</h3>
-              <p className="text-xs text-gray-500">Safe parcel dispatch to 500+ cities</p>
+              <h3 className="font-serif font-bold text-gray-900 text-xs sm:text-base">Pan-India Dispatch</h3>
+              <p className="text-[10px] sm:text-xs text-gray-500 hidden xs:block">500+ cities logistics</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3.5 p-2">
-            <div className="w-12 h-12 rounded-xl bg-brand-cream text-brand-maroon flex items-center justify-center shrink-0 border border-brand-maroon/10">
-              <Award className="w-6 h-6" />
+          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1.5 sm:p-2">
+            <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-brand-cream text-brand-maroon flex items-center justify-center shrink-0 border border-brand-maroon/10">
+              <Award className="w-4 h-4 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h3 className="font-serif font-bold text-gray-900 text-sm sm:text-base">Wholesale MOQ</h3>
-              <p className="text-xs text-gray-500">Boutique friendly starting from 2-4 pcs</p>
+              <h3 className="font-serif font-bold text-gray-900 text-xs sm:text-base">Wholesale MOQ</h3>
+              <p className="text-[10px] sm:text-xs text-gray-500 hidden xs:block">From 2-4 pcs/design</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3.5 p-2">
-            <div className="w-12 h-12 rounded-xl bg-brand-cream text-brand-maroon flex items-center justify-center shrink-0 border border-brand-maroon/10">
-              <ShieldCheck className="w-6 h-6" />
+          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1.5 sm:p-2">
+            <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-brand-cream text-brand-maroon flex items-center justify-center shrink-0 border border-brand-maroon/10">
+              <ShieldCheck className="w-4 h-4 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h3 className="font-serif font-bold text-gray-900 text-sm sm:text-base">Adarsh Market-2</h3>
-              <p className="text-xs text-gray-500">Shop 238 to 241, Ring Road, Surat</p>
+              <h3 className="font-serif font-bold text-gray-900 text-xs sm:text-base">Adarsh Market-2</h3>
+              <p className="text-[10px] sm:text-xs text-gray-500 hidden xs:block">Ring Road, Surat</p>
             </div>
           </div>
         </div>
@@ -76,17 +76,17 @@ export default function HomePage() {
 
       {/* 3. Featured Categories Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <span className="text-xs font-bold text-brand-goldMuted uppercase tracking-widest block mb-2">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <span className="text-xs font-bold text-brand-goldMuted uppercase tracking-widest block mb-1">
             Curated Collections
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-gray-900">
             Explore Ethnic Wear Categories
           </h2>
-          <div className="w-20 h-1 bg-brand-gold mx-auto mt-3 rounded-full" />
+          <div className="w-16 sm:w-20 h-1 bg-brand-gold mx-auto mt-2 sm:mt-3 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6">
           {sampleCategories.map((cat, idx) => (
             <motion.div
               key={cat.id}
@@ -105,11 +105,11 @@ export default function HomePage() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <h3 className="font-serif text-sm sm:text-base font-bold group-hover:text-brand-goldLight transition-colors">
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3 sm:left-3 sm:right-3 text-white">
+                  <h3 className="font-serif text-xs sm:text-base font-bold group-hover:text-brand-goldLight transition-colors leading-tight">
                     {cat.name}
                   </h3>
-                  <span className="text-[11px] text-gray-300 font-medium">
+                  <span className="text-[10px] sm:text-[11px] text-gray-300 font-medium">
                     {cat.product_count || 12}+ Styles →
                   </span>
                 </div>
@@ -121,7 +121,7 @@ export default function HomePage() {
 
       {/* 4. Products Tabbed Showcase (Best Sellers / New Arrivals / Sarees) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
           <div>
             <span className="text-xs font-bold text-brand-goldMuted uppercase tracking-widest">
               Direct from Surat Looms
@@ -131,43 +131,45 @@ export default function HomePage() {
             </h2>
           </div>
 
-          {/* Interactive Animated Tabs */}
-          <div className="flex items-center gap-1.5 p-1 bg-white rounded-xl shadow-sm border border-gray-200">
-            <button
-              onClick={() => setActiveTab('bestseller')}
-              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-                activeTab === 'bestseller'
-                  ? 'bg-brand-maroon text-white shadow'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Best Sellers
-            </button>
-            <button
-              onClick={() => setActiveTab('new_arrival')}
-              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-                activeTab === 'new_arrival'
-                  ? 'bg-brand-maroon text-white shadow'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              New Season
-            </button>
-            <button
-              onClick={() => setActiveTab('sarees')}
-              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-                activeTab === 'sarees'
-                  ? 'bg-brand-maroon text-white shadow'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Silk & Bandhani Sarees
-            </button>
+          {/* Interactive Scrollable Tabs */}
+          <div className="w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
+            <div className="flex items-center gap-1.5 p-1 bg-white rounded-xl shadow-sm border border-gray-200 whitespace-nowrap min-w-max">
+              <button
+                onClick={() => setActiveTab('bestseller')}
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs font-bold transition-all ${
+                  activeTab === 'bestseller'
+                    ? 'bg-brand-maroon text-white shadow'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                Best Sellers
+              </button>
+              <button
+                onClick={() => setActiveTab('new_arrival')}
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs font-bold transition-all ${
+                  activeTab === 'new_arrival'
+                    ? 'bg-brand-maroon text-white shadow'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                New Season
+              </button>
+              <button
+                onClick={() => setActiveTab('sarees')}
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs font-bold transition-all ${
+                  activeTab === 'sarees'
+                    ? 'bg-brand-maroon text-white shadow'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                Silk & Bandhani Sarees
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Product Cards Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
           {filteredProducts.slice(0, 8).map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

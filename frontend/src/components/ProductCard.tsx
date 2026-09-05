@@ -76,34 +76,34 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
 
       {/* Product Information */}
-      <div className="p-4 flex flex-col flex-1 justify-between">
+      <div className="p-2.5 sm:p-4 flex flex-col flex-1 justify-between">
         <div>
           {/* Category & SKU */}
           <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
-            <span className="text-brand-goldMuted font-semibold uppercase tracking-wider text-[11px]">
+            <span className="text-brand-goldMuted font-bold uppercase tracking-wider text-[10px] sm:text-[11px] truncate max-w-[65%]">
               {product.category_name || 'Ethnic Wear'}
             </span>
-            <span className="bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded text-[10px] font-mono">
+            <span className="bg-gray-100 text-gray-600 px-1 py-0.5 rounded text-[9px] sm:text-[10px] font-mono">
               {product.sku}
             </span>
           </div>
 
           {/* Title */}
           <Link href={`/products/${product.slug || product.id}`}>
-            <h3 className="font-serif font-bold text-gray-900 text-sm sm:text-base line-clamp-2 hover:text-brand-maroon transition-colors mb-2 leading-snug">
+            <h3 className="font-serif font-bold text-gray-900 text-xs sm:text-sm md:text-base line-clamp-2 hover:text-brand-maroon transition-colors mb-1.5 sm:mb-2 leading-snug">
               {product.name}
             </h3>
           </Link>
 
           {/* Fabric & Work Tags */}
-          <div className="flex flex-wrap gap-1 mb-3">
+          <div className="flex flex-wrap gap-1 mb-2 sm:mb-3">
             {product.fabric && (
-              <span className="text-[11px] text-gray-700 bg-brand-cream px-2 py-0.5 rounded-md border border-brand-maroon/10">
+              <span className="text-[10px] sm:text-[11px] text-gray-700 bg-brand-cream px-1.5 sm:px-2 py-0.5 rounded-md border border-brand-maroon/10">
                 {product.fabric}
               </span>
             )}
             {product.work_type && (
-              <span className="text-[11px] text-gray-700 bg-gray-50 px-2 py-0.5 rounded-md border border-gray-200">
+              <span className="text-[10px] sm:text-[11px] text-gray-700 bg-gray-50 px-1.5 sm:px-2 py-0.5 rounded-md border border-gray-200 hidden xs:inline-block">
                 {product.work_type}
               </span>
             )}
@@ -112,24 +112,24 @@ export default function ProductCard({ product }: { product: Product }) {
 
         {/* Price & Wholesale Strip */}
         <div className="pt-2 border-t border-gray-100">
-          <div className="flex items-baseline justify-between mb-3">
+          <div className="flex items-baseline justify-between mb-2 sm:mb-3">
             <div>
               {product.price_on_enquiry ? (
-                <div className="text-sm font-bold text-brand-maroon">
+                <div className="text-xs sm:text-sm font-bold text-brand-maroon">
                   Price on Enquiry
                 </div>
               ) : (
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-base sm:text-lg font-bold text-brand-maroon">
+                <div className="flex items-baseline gap-1 sm:gap-1.5 flex-wrap">
+                  <span className="text-sm sm:text-base md:text-lg font-bold text-brand-maroon">
                     ₹{product.wholesale_price || product.price}
                   </span>
                   {product.wholesale_price > 0 && product.price > product.wholesale_price && (
-                    <span className="text-xs text-gray-400 line-through">
+                    <span className="text-[10px] sm:text-xs text-gray-400 line-through">
                       ₹{product.price}
                     </span>
                   )}
-                  <span className="text-[10px] font-semibold text-green-700 bg-green-50 px-1.5 py-0.2 rounded">
-                    Factory Rate
+                  <span className="text-[9px] sm:text-[10px] font-semibold text-green-700 bg-green-50 px-1 sm:px-1.5 py-0.2 rounded whitespace-nowrap">
+                    Wholesale
                   </span>
                 </div>
               )}
@@ -137,25 +137,25 @@ export default function ProductCard({ product }: { product: Product }) {
           </div>
 
           {/* Action Buttons */}
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
             {/* Direct WhatsApp button */}
             <button
               onClick={handleWhatsApp}
-              className="flex items-center justify-center gap-1.5 py-2 px-2.5 bg-green-600 hover:bg-green-700 text-white rounded-xl text-xs font-bold transition-colors shadow-sm"
+              className="flex items-center justify-center gap-1 sm:gap-1.5 py-1.5 sm:py-2 px-1.5 sm:px-2.5 bg-green-600 hover:bg-green-700 text-white rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition-colors shadow-sm"
               title="Inquire on WhatsApp"
             >
-              <MessageSquare className="w-3.5 h-3.5" />
-              <span>WhatsApp</span>
+              <MessageSquare className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+              <span className="truncate">WhatsApp</span>
             </button>
 
             {/* Add to Enquiry Cart */}
             <button
               onClick={handleQuickAdd}
-              className="flex items-center justify-center gap-1.5 py-2 px-2.5 bg-brand-cream hover:bg-brand-maroon text-brand-maroon hover:text-white border border-brand-maroon/20 rounded-xl text-xs font-bold transition-all shadow-sm"
+              className="flex items-center justify-center gap-1 sm:gap-1.5 py-1.5 sm:py-2 px-1.5 sm:px-2.5 bg-brand-cream hover:bg-brand-maroon text-brand-maroon hover:text-white border border-brand-maroon/20 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition-all shadow-sm"
               title="Add to wholesale quotation list"
             >
-              <Plus className="w-3.5 h-3.5" />
-              <span>Add to Quote</span>
+              <Plus className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+              <span className="truncate">+ Quote</span>
             </button>
           </div>
         </div>

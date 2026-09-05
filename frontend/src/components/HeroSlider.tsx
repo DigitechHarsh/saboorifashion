@@ -78,7 +78,7 @@ export default function HeroSlider({ banners = sampleBanners }: { banners?: Bann
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white drop-shadow-md"
+            className="font-serif text-2xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white drop-shadow-md"
           >
             {currentBanner.title}
           </motion.h1>
@@ -89,7 +89,7 @@ export default function HeroSlider({ banners = sampleBanners }: { banners?: Bann
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base sm:text-lg text-gray-200 leading-relaxed max-w-xl font-light"
+            className="text-xs sm:text-lg text-gray-200 leading-relaxed max-w-xl font-light line-clamp-3 sm:line-clamp-none"
           >
             {currentBanner.subtitle}
           </motion.p>
@@ -100,31 +100,31 @@ export default function HeroSlider({ banners = sampleBanners }: { banners?: Bann
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap items-center gap-3.5 pt-2"
+            className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 pt-1 sm:pt-2"
           >
             <Link
               href={currentBanner.link || '/products'}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-gold hover:bg-brand-goldLight text-brand-darkMaroon font-bold text-sm sm:text-base transition-all shadow-lg hover:shadow-brand-gold/30 hover:scale-105 active:scale-95"
+              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-xl bg-brand-gold hover:bg-brand-goldLight text-brand-darkMaroon font-bold text-xs sm:text-base transition-all shadow-lg hover:shadow-brand-gold/30 hover:scale-105 active:scale-95"
             >
               <span>{currentBanner.cta_text || 'Explore Catalogs'}</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </Link>
 
             <a
               href="https://wa.me/918780331600?text=Hello%20Saboori%20Fashion%2C%20I%20want%20to%20inquire%20about%20bulk%20wholesale%20rates."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-sm sm:text-base transition-all shadow-lg hover:shadow-green-600/30 hover:scale-105 active:scale-95"
+              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2.5 sm:py-3.5 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs sm:text-base transition-all shadow-lg hover:shadow-green-600/30 hover:scale-105 active:scale-95"
             >
-              <MessageSquare className="w-4 h-4" />
-              <span>WhatsApp Direct</span>
+              <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span>WhatsApp</span>
             </a>
 
             <button
               onClick={() => setIsWholesaleModalOpen(true)}
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm border border-white/20 backdrop-blur-md transition-colors"
+              className="hidden xs:inline-flex items-center gap-2 px-3.5 sm:px-4 py-2.5 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs sm:text-sm border border-white/20 backdrop-blur-md transition-colors"
             >
-              <span>Download B2B Catalog</span>
+              <span>Download B2B PDF</span>
             </button>
           </motion.div>
         </div>
@@ -133,18 +133,18 @@ export default function HeroSlider({ banners = sampleBanners }: { banners?: Bann
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/40 hover:bg-brand-maroon text-white flex items-center justify-center backdrop-blur-sm border border-white/10 transition-all opacity-70 hover:opacity-100 hover:scale-110"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-brand-maroon text-white flex items-center justify-center backdrop-blur-sm border border-white/10 transition-all opacity-60 hover:opacity-100 hover:scale-110"
         aria-label="Previous Banner Slide"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/40 hover:bg-brand-maroon text-white flex items-center justify-center backdrop-blur-sm border border-white/10 transition-all opacity-70 hover:opacity-100 hover:scale-110"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-brand-maroon text-white flex items-center justify-center backdrop-blur-sm border border-white/10 transition-all opacity-60 hover:opacity-100 hover:scale-110"
         aria-label="Next Banner Slide"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       {/* Slider Indicator Dots */}

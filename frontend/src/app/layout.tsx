@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -37,10 +43,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased min-h-screen flex flex-col font-sans bg-[#FAF7F2] text-[#1F1E1D]">
+      <body className="antialiased min-h-screen flex flex-col font-sans bg-[#FAF7F2] text-[#1F1E1D] selection:bg-brand-gold/30 selection:text-brand-darkMaroon">
         <ShopProvider>
           <Navbar />
-          <main className="flex-1">
+          <main className="flex-1 pb-20 md:pb-0">
             {children}
           </main>
           <Footer />
