@@ -76,9 +76,11 @@ export default function Navbar() {
             
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-brand-maroon flex items-center justify-center text-brand-gold font-serif font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
-                S
-              </div>
+              <img
+                src="/logo.png"
+                alt="Saboori Fashion"
+                className="h-11 w-auto object-contain group-hover:scale-105 transition-transform"
+              />
               <div className="flex flex-col">
                 <span className="font-serif text-2xl font-bold text-brand-maroon tracking-wider">
                   SABOORI
@@ -277,10 +279,12 @@ export default function Navbar() {
             >
               {/* Drawer Header */}
               <div className="p-4 border-b border-gray-100 flex items-center justify-between bg-brand-cream">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-brand-maroon flex items-center justify-center text-brand-gold font-serif font-bold text-sm">
-                    S
-                  </div>
+                <div className="flex items-center gap-2.5">
+                  <img
+                    src="/logo.png"
+                    alt="Saboori Fashion"
+                    className="h-9 w-auto object-contain"
+                  />
                   <span className="font-serif font-bold text-brand-maroon text-lg">Saboori Fashion</span>
                 </div>
                 <button

@@ -86,8 +86,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="login-container">
     <div class="login-card">
       <div class="login-header">
-        <h1>Saboori Fashion</h1>
-        <p class="brand-sub">Adarsh Market-2, Surat • Admin Portal</p>
+        <img src="logo.png" alt="Saboori Fashion" style="height: 70px; width: auto; margin-bottom: 12px; object-fit: contain;">
+        <h1 style="margin: 0; font-size: 1.5rem; color: #d4af37;">Saboori Fashion</h1>
+        <p class="brand-sub" style="margin-top: 4px;">Adarsh Market-2, Surat • Admin Portal</p>
       </div>
 
       <?php if (!empty($error)): ?>

@@ -57,8 +57,12 @@ export default function Footer() {
         {/* Brand & Address Column */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-brand-gold flex items-center justify-center text-brand-darkMaroon font-serif font-bold text-xl shadow">
-              S
+            <div className="p-1.5 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm">
+              <img
+                src="/logo.png"
+                alt="Saboori Fashion"
+                className="h-10 w-auto object-contain brightness-110"
+              />
             </div>
             <div>
               <span className="font-serif text-2xl font-bold tracking-wider text-brand-goldLight">

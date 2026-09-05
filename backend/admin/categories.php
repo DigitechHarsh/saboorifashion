@@ -18,9 +18,12 @@ $categories = $pdo->query("SELECT * FROM categories ORDER BY display_order ASC, 
 <body>
   <div class="admin-layout">
     <aside class="admin-sidebar">
-      <div class="sidebar-header">
-        <div class="brand-title">Saboori Fashion</div>
-        <div class="brand-sub">Admin Dashboard</div>
+      <div class="sidebar-header" style="display: flex; align-items: center; gap: 12px;">
+        <img src="logo.png" alt="Saboori Fashion" style="height: 40px; width: auto; object-fit: contain;">
+        <div>
+          <div class="brand-title" style="font-size: 1.05rem;">Saboori Fashion</div>
+          <div class="brand-sub" style="font-size: 0.7rem;">Admin Dashboard</div>
+        </div>
       </div>
       <ul class="sidebar-menu">
         <li><a href="index.php">📊 Overview</a></li>
