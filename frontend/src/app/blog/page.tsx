@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { sampleBlogPosts } from '@/lib/sampleData';
-import { Calendar, User, ArrowRight, Sparkles } from 'lucide-react';
+import { Calendar, User, ArrowRight } from 'lucide-react';
 
 export default function BlogListPage() {
   return (

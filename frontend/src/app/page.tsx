@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Sparkles, ArrowRight, ShieldCheck, Truck, Factory, 
-  Award, MessageSquare, Star, ChevronRight, Download, Check
+  ArrowRight, ShieldCheck, Truck, Factory, 
+  Award, MessageSquare, Star, ChevronRight, Download, Check, Layers
 } from 'lucide-react';
 import HeroSlider from '@/components/HeroSlider';
 import ProductCard from '@/components/ProductCard';
@@ -141,7 +141,7 @@ export default function HomePage() {
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              ★ Best Sellers
+              Best Sellers
             </button>
             <button
               onClick={() => setActiveTab('new_arrival')}
@@ -151,7 +151,7 @@ export default function HomePage() {
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              ✨ New Arrivals
+              New Season
             </button>
             <button
               onClick={() => setActiveTab('sarees')}
@@ -161,7 +161,7 @@ export default function HomePage() {
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              🥻 Silk & Bandhani Sarees
+              Silk & Bandhani Sarees
             </button>
           </div>
         </div>
@@ -179,7 +179,7 @@ export default function HomePage() {
             href="/products"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-maroon hover:bg-brand-darkMaroon text-white font-bold text-sm rounded-xl shadow-lg transition-all hover:scale-105"
           >
-            <span>Explore All 100+ Factory Catalogs</span>
+            <span>Explore All Factory Catalogs</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -189,8 +189,8 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-brand-darkMaroon via-[#540d1e] to-brand-maroon text-white p-8 sm:p-14 shadow-2xl border border-brand-gold/40">
           <div className="relative z-10 max-w-2xl space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/20 text-brand-goldLight text-xs font-bold tracking-wider uppercase border border-brand-gold/30">
-              <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/15 text-brand-goldLight text-xs font-bold tracking-wider uppercase border border-brand-gold/30">
+              <Factory className="w-3.5 h-3.5 text-brand-gold" />
               <span>B2B Wholesale Advantage</span>
             </div>
             

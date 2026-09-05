@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { MessageSquare, Plus, Eye, Check, Sparkles } from 'lucide-react';
+import { MessageSquare, Plus, Eye, Check } from 'lucide-react';
 import { Product } from '@/lib/types';
 import { useShop } from '@/lib/context';
 
@@ -35,7 +35,7 @@ export default function ProductCard({ product }: { product: Product }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:border-brand-gold/30 transition-all duration-300 flex flex-col justify-between"
+      className="group bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl hover:border-brand-gold/40 transition-all duration-300 flex flex-col justify-between"
     >
       {/* Image Container */}
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
@@ -52,15 +52,15 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
           {product.is_bestseller && (
             <span className="bg-brand-maroon text-brand-goldLight text-[10px] font-bold uppercase px-2.5 py-1 rounded-md shadow-md tracking-wider">
-              ★ Best Seller
+              Best Seller
             </span>
           )}
           {product.is_new_arrival && (
             <span className="bg-brand-gold text-brand-darkMaroon text-[10px] font-bold uppercase px-2.5 py-1 rounded-md shadow-md tracking-wider">
-              New Arrival
+              New Season
             </span>
           )}
-          <span className="bg-black/70 text-white backdrop-blur-sm text-[10px] font-semibold px-2 py-0.5 rounded-md">
+          <span className="bg-black/75 text-white backdrop-blur-sm text-[10px] font-semibold px-2 py-0.5 rounded-md">
             MOQ: {product.moq} pcs
           </span>
         </div>
@@ -68,7 +68,7 @@ export default function ProductCard({ product }: { product: Product }) {
         {/* Quick View Button on Desktop Hover */}
         <button
           onClick={handleQuickView}
-          className="absolute bottom-3 right-3 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-xl shadow-md backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0"
+          className="absolute bottom-3 right-3 bg-white/95 hover:bg-white text-gray-800 p-2 rounded-xl shadow-md backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0"
           title="Quick View Details"
         >
           <Eye className="w-4 h-4 text-brand-maroon" />
@@ -98,13 +98,13 @@ export default function ProductCard({ product }: { product: Product }) {
           {/* Fabric & Work Tags */}
           <div className="flex flex-wrap gap-1 mb-3">
             {product.fabric && (
-              <span className="text-[11px] text-gray-600 bg-brand-cream px-2 py-0.5 rounded-md border border-brand-maroon/10">
-                🧵 {product.fabric}
+              <span className="text-[11px] text-gray-700 bg-brand-cream px-2 py-0.5 rounded-md border border-brand-maroon/10">
+                {product.fabric}
               </span>
             )}
             {product.work_type && (
-              <span className="text-[11px] text-gray-600 bg-gray-50 px-2 py-0.5 rounded-md border border-gray-200">
-                ✨ {product.work_type}
+              <span className="text-[11px] text-gray-700 bg-gray-50 px-2 py-0.5 rounded-md border border-gray-200">
+                {product.work_type}
               </span>
             )}
           </div>

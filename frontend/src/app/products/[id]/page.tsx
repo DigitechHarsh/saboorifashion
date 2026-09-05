@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { 
   MessageSquare, Plus, Check, ShieldCheck, Truck, 
-  RotateCcw, ArrowLeft, Factory, Sparkles, ChevronRight
+  RotateCcw, ArrowLeft, Factory, ChevronRight
 } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
 import { sampleProducts } from '@/lib/sampleData';

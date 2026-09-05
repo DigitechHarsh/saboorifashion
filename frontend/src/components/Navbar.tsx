@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Phone, MessageSquare, ShoppingBag, 
-  Search, ChevronDown, Sparkles, Building2, Download
+  Search, ChevronDown, Building2, Download, ShieldCheck
 } from 'lucide-react';
 import { useShop } from '@/lib/context';
 import { sampleCategories } from '@/lib/sampleData';
@@ -46,8 +46,8 @@ export default function Navbar() {
       <div className="bg-brand-darkMaroon text-brand-goldLight text-xs py-2 px-4 border-b border-brand-gold/20">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-2 text-center sm:text-left">
-            <Sparkles className="w-3.5 h-3.5 text-brand-gold animate-spin" style={{ animationDuration: '6s' }} />
-            <span>✨ Surat’s Premier Ethnic Wear Manufacturer • Direct Factory Rates • Pan-India Transport</span>
+            <span className="inline-block w-2 h-2 rounded-full bg-brand-gold"></span>
+            <span className="tracking-wide">Surat Wholesale Textile Manufacturer • Direct Factory Rates • Pan-India Transport</span>
           </div>
           <div className="flex items-center gap-4">
             <a 

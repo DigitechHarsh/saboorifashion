@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   Factory, Download, ShieldCheck, Truck, MessageSquare, 
-  Send, CheckCircle2, ChevronRight, Sparkles, Building2, Package
+  Send, CheckCircle2, ChevronRight, Building2, Package
 } from 'lucide-react';
 import { useShop } from '@/lib/context';
 import { submitEnquiry } from '@/lib/api';

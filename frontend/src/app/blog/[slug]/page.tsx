@@ -3,7 +3,7 @@
 import React from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { Calendar, User, ArrowLeft, MessageSquare, Sparkles, ChevronRight } from 'lucide-react';
+import { Calendar, User, ArrowLeft, MessageSquare, ChevronRight } from 'lucide-react';
 import { sampleBlogPosts } from '@/lib/sampleData';
 
 export default function BlogPostDetailPage() {

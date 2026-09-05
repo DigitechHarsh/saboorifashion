@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Factory, Award, ShieldCheck, MapPin, Phone, MessageSquare, Sparkles, Building2, Truck } from 'lucide-react';
+import { Factory, Award, ShieldCheck, MapPin, Phone, MessageSquare, Building2, Truck } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -10,8 +10,8 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-r from-brand-darkMaroon to-brand-maroon text-white rounded-3xl p-8 sm:p-14 shadow-2xl border border-brand-gold/30">
           <div className="max-w-3xl space-y-4">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/20 text-brand-goldLight text-xs font-bold tracking-widest uppercase">
-              <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/15 text-brand-goldLight text-xs font-bold tracking-widest uppercase">
+              <Factory className="w-3.5 h-3.5 text-brand-gold" />
               <span>SURAT TEXTILE HERITAGE</span>
             </span>
 

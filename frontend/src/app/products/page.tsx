@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { 
   Filter, Grid, List, Search, RotateCcw, 
-  SlidersHorizontal, ChevronDown, Check, X, Sparkles, Loader2
+  SlidersHorizontal, ChevronDown, Check, X, Loader2
 } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
 import { sampleCategories, sampleProducts } from '@/lib/sampleData';

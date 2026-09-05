@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, MessageSquare, Sparkles, ArrowRight, ShieldCheck, Truck } from 'lucide-react';
+import { ChevronLeft, ChevronRight, MessageSquare, ArrowRight, ShieldCheck, Truck, Factory } from 'lucide-react';
 import { Banner } from '@/lib/types';
 import { sampleBanners } from '@/lib/sampleData';
 import { useShop } from '@/lib/context';
@@ -66,9 +66,9 @@ export default function HeroSlider({ banners = sampleBanners }: { banners?: Bann
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-gold/20 border border-brand-gold/40 backdrop-blur-md text-brand-goldLight text-xs font-bold tracking-widest uppercase"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/15 border border-brand-gold/35 backdrop-blur-md text-brand-goldLight text-xs font-bold tracking-widest uppercase"
           >
-            <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
+            <Factory className="w-3.5 h-3.5 text-brand-gold" />
             <span>{currentBanner.tagline || 'SURAT FACTORY DIRECT'}</span>
           </motion.div>
 

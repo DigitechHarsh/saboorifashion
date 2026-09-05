@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Sparkles, Building2, Factory, Eye } from 'lucide-react';
+import { X, Building2, Factory, Eye } from 'lucide-react';
 import { sampleGallery } from '@/lib/sampleData';
 import { GalleryItem } from '@/lib/types';
 

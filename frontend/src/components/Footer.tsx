@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { 
   Phone, Mail, MapPin, Clock, MessageSquare, 
-  ShieldCheck, Truck, Award, Sparkles, ChevronRight
+  ShieldCheck, Truck, Award, Factory, ChevronRight
 } from 'lucide-react';
 import { sampleCategories } from '@/lib/sampleData';
 
@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-brand-gold/20 flex items-center justify-center text-brand-gold shrink-0">
-              <Sparkles className="w-5 h-5" />
+              <Factory className="w-5 h-5" />
             </div>
             <div>
               <h4 className="text-sm font-bold text-brand-goldLight">B2B + B2C Friendly</h4>

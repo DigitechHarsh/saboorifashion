@@ -9,7 +9,7 @@ export const initialSiteSettings: SiteSettings = {
   whatsapp_number: "918780331600",
   email: "contact@saboorifashion.com",
   business_hours: "Monday – Saturday: 10:00 AM – 8:30 PM (Sunday Closed)",
-  announcement_bar: "✨ Direct Factory Wholesale Rates • Pan-India Fast Courier & Transport • Adarsh Market-2, Surat",
+  announcement_bar: "Direct Factory Wholesale Rates • Pan-India Express Courier & Transport Dispatch • Adarsh Market-2, Surat",
   catalog_pdf_url: "#",
   map_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.0888279883584!2d72.8427771!3d21.1886111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e578c772e81%3A0x8670498b2c28bb07!2sAdarsh%20Market-2%2C%20Ring%20Rd%2C%20Surat%2C%20Gujarat%20395002!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
 };
