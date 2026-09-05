@@ -1,0 +1,28 @@
+# Node & Dependencies
+node_modules/
+frontend/node_modules/
+.pnp
+.pnp.js
+
+# Next.js build outputs
+frontend/.next/
+frontend/out/
+.next/
+out/
+
+# Environment files
+frontend/.env*.local
+.env*.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/

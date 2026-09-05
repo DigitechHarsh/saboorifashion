@@ -1,0 +1,98 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --color-maroon: #6e1329;
+  --color-dark-maroon: #4a0e1c;
+  --color-gold: #d4af37;
+  --color-gold-light: #f3e5ab;
+  --color-cream: #faf7f2;
+  --color-charcoal: #1f1e1d;
+}
+
+body {
+  background-color: #faf7f2;
+  color: #1f1e1d;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1ede6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5a059;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6e1329;
+}
+
+/* Ethnic Pattern Overlay Utility */
+.ethnic-pattern {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #d4af37 0%, #f6e05e 50%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #d4af37, #f6e05e, #d4af37) 1;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: shimmer 2.5s infinite;
+  content: "";
+}
+
+/* Pulsing glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.8);
+  }
+}
+
+.whatsapp-pulse {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
