@@ -10,18 +10,27 @@ import {
 import ProductCard from '@/components/ProductCard';
 import { sampleCategories, sampleProducts } from '@/lib/sampleData';
 import { Product } from '@/lib/types';
+import { getStoredProducts } from '@/lib/api';
 
 function ProductsCatalogContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams?.get('category') || 'all';
   const initialSearch = searchParams?.get('search') || '';
 
+  const [allProducts, setAllProducts] = useState<Product[]>(sampleProducts);
   const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
   const [selectedFabric, setSelectedFabric] = useState<string>('all');
   const [selectedWork, setSelectedWork] = useState<string>('all');
   const [priceSort, setPriceSort] = useState<string>('newest');
   const [searchQuery, setSearchQuery] = useState<string>(initialSearch);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+
+  useEffect(() => {
+    setAllProducts(getStoredProducts());
+    const handleUpdate = () => setAllProducts(getStoredProducts());
+    window.addEventListener('saboori_products_updated', handleUpdate);
+    return () => window.removeEventListener('saboori_products_updated', handleUpdate);
+  }, []);
 
   useEffect(() => {
     if (searchParams) {
@@ -34,18 +43,18 @@ function ProductsCatalogContent() {
 
   const uniqueFabrics = useMemo(() => {
     const set = new Set<string>();
-    sampleProducts.forEach(p => { if (p.fabric) set.add(p.fabric); });
+    allProducts.forEach(p => { if (p.fabric) set.add(p.fabric); });
     return Array.from(set);
-  }, []);
+  }, [allProducts]);
 
   const uniqueWorkTypes = useMemo(() => {
     const set = new Set<string>();
-    sampleProducts.forEach(p => { if (p.work_type) set.add(p.work_type); });
+    allProducts.forEach(p => { if (p.work_type) set.add(p.work_type); });
     return Array.from(set);
-  }, []);
+  }, [allProducts]);
 
   const filteredProducts = useMemo(() => {
-    let list = [...sampleProducts];
+    let list = [...allProducts];
 
     if (selectedCategory !== 'all') {
       list = list.filter(p => p.category_slug === selectedCategory);

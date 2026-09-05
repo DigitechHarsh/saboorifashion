@@ -3,17 +3,28 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Plus, Search, Edit2, Trash2, Check, X, 
-  Eye, Filter, ArrowUpDown, Image as ImageIcon 
+  Eye, Filter, ArrowUpDown, Image as ImageIcon, CheckCircle2 
 } from 'lucide-react';
 import { sampleProducts, sampleCategories } from '@/lib/sampleData';
 import { Product } from '@/lib/types';
+import { getStoredProducts, saveStoredProducts } from '@/lib/api';
 
 export default function AdminProductsPage() {
-  const [products, setProducts] = useState<Product[]>(sampleProducts);
+  const [products, setProducts] = useState<Product[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [successToast, setSuccessToast] = useState<string | null>(null);
+
+  useEffect(() => {
+    setProducts(getStoredProducts());
+  }, []);
+
+  const showToast = (msg: string) => {
+    setSuccessToast(msg);
+    setTimeout(() => setSuccessToast(null), 3500);
+  };
 
   // Form State
   const [formData, setFormData] = useState({
@@ -86,7 +97,16 @@ export default function AdminProductsPage() {
 
   const handleDelete = (id: number) => {
     if (confirm('Are you sure you want to remove this product from the catalog?')) {
-      setProducts(products.filter(p => p.id !== id));
+      const updated = products.filter(p => p.id !== id);
+      setProducts(updated);
+      saveStoredProducts(updated);
+      showToast('Product deleted from catalog.');
+
+      // Also call backend API in background
+      try {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://saboorifashion.harshaicreations.com';
+        fetch(`${apiUrl}/api/products/delete.php?id=${id}`, { method: 'DELETE' }).catch(() => {});
+      } catch (e) {}
     }
   };
 
@@ -94,14 +114,16 @@ export default function AdminProductsPage() {
     e.preventDefault();
     const cat = sampleCategories.find(c => c.id === Number(formData.category_id)) || sampleCategories[0];
 
+    let updatedList: Product[] = [];
     if (editingProduct) {
-      setProducts(products.map(p => p.id === editingProduct.id ? {
+      updatedList = products.map(p => p.id === editingProduct.id ? {
         ...p,
         ...formData,
         category_name: cat.name,
         category_slug: cat.slug,
         id: editingProduct.id
-      } : p));
+      } : p);
+      showToast(`Product "${formData.name}" updated successfully!`);
     } else {
       const newProd: Product = {
         id: Date.now(),
@@ -125,19 +147,51 @@ export default function AdminProductsPage() {
         is_active: true,
         created_at: new Date().toISOString()
       };
-      setProducts([newProd, ...products]);
+      updatedList = [newProd, ...products];
+      showToast(`New product "${formData.name}" added to catalog!`);
     }
+
+    setProducts(updatedList);
+    saveStoredProducts(updatedList);
     setIsModalOpen(false);
+
+    // Call backend API in background
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://saboorifashion.harshaicreations.com';
+      const endpoint = editingProduct ? '/api/products/update.php' : '/api/products/create.php';
+      fetch(`${apiUrl}${endpoint}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...(editingProduct ? { id: editingProduct.id } : {}),
+          ...formData,
+          category_id: cat.id
+        })
+      }).catch(() => {});
+    } catch (e) {}
   };
 
   return (
     <div className="space-y-6">
       
+      {/* Toast Notification */}
+      {successToast && (
+        <div className="p-4 rounded-2xl bg-green-950/80 border border-green-700 text-green-200 text-xs flex items-center justify-between shadow-xl animate-fade-in">
+          <div className="flex items-center gap-2.5">
+            <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" />
+            <span className="font-semibold">{successToast}</span>
+          </div>
+          <button onClick={() => setSuccessToast(null)} className="text-green-400 hover:text-white">
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
       {/* Header & Actions */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h1 className="font-serif text-2xl font-bold text-white">Product Catalog Management</h1>
-          <p className="text-xs text-gray-400">Total {products.length} products listed across all categories</p>
+          <p className="text-xs text-gray-400">Total {products.length} products live in catalog</p>
         </div>
 
         <button

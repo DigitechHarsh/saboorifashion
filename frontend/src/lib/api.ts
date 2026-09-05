@@ -14,6 +14,41 @@ const API_BASE = process.env.NEXT_PUBLIC_API_URL || '';
 /**
  * Fetch all products with filtering options
  */
+/**
+ * Get active products list from LocalStorage or Default Sample Dataset
+ */
+export function getStoredProducts(): Product[] {
+  if (typeof window !== 'undefined') {
+    try {
+      const stored = localStorage.getItem('saboori_custom_products');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (e) {
+      console.warn('LocalStorage read error', e);
+    }
+  }
+  return sampleProducts;
+}
+
+/**
+ * Save updated products list to LocalStorage
+ */
+export function saveStoredProducts(products: Product[]) {
+  if (typeof window !== 'undefined') {
+    try {
+      localStorage.setItem('saboori_custom_products', JSON.stringify(products));
+      window.dispatchEvent(new Event('saboori_products_updated'));
+    } catch (e) {
+      console.warn('LocalStorage write error', e);
+    }
+  }
+}
+
+/**
+ * Fetch all products with filtering options
+ */
 export async function fetchProducts(params: {
   category?: string;
   subcategory?: string;
@@ -51,8 +86,8 @@ export async function fetchProducts(params: {
     }
   }
 
-  // Local fallback filter
-  let list = [...sampleProducts];
+  // Local fallback filter using persisted products
+  let list = [...getStoredProducts()];
   if (params.category) {
     list = list.filter(p => p.category_slug === params.category);
   }
@@ -73,16 +108,16 @@ export async function fetchProducts(params: {
     list = list.filter(p =>
       p.name.toLowerCase().includes(s) ||
       p.sku.toLowerCase().includes(s) ||
-      p.fabric.toLowerCase().includes(s) ||
-      p.work_type.toLowerCase().includes(s) ||
-      p.description.toLowerCase().includes(s)
+      (p.fabric && p.fabric.toLowerCase().includes(s)) ||
+      (p.work_type && p.work_type.toLowerCase().includes(s)) ||
+      (p.description && p.description.toLowerCase().includes(s))
     );
   }
 
   if (params.sort === 'price_low') {
-    list.sort((a, b) => a.price - b.price);
+    list.sort((a, b) => (a.wholesale_price || a.price) - (b.wholesale_price || b.price));
   } else if (params.sort === 'price_high') {
-    list.sort((a, b) => b.price - a.price);
+    list.sort((a, b) => (b.wholesale_price || b.price) - (a.wholesale_price || a.price));
   } else if (params.sort === 'name_asc') {
     list.sort((a, b) => a.name.localeCompare(b.name));
   }
@@ -117,11 +152,12 @@ export async function fetchProductDetail(idOrSlug: string | number): Promise<{ p
     }
   }
 
+  const allProducts = getStoredProducts();
   const isNumeric = !isNaN(Number(idOrSlug));
-  const product = sampleProducts.find(p => isNumeric ? p.id === Number(idOrSlug) : p.slug === idOrSlug || String(p.id) === String(idOrSlug));
+  const product = allProducts.find(p => isNumeric ? p.id === Number(idOrSlug) : p.slug === idOrSlug || String(p.id) === String(idOrSlug));
   if (!product) return null;
 
-  const related = sampleProducts.filter(p => p.category_id === product.category_id && p.id !== product.id).slice(0, 4);
+  const related = allProducts.filter(p => p.category_id === product.category_id && p.id !== product.id).slice(0, 4);
 
   return { product, related };
 }
