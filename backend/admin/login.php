@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!empty($username) && !empty($password)) {
         try {
-            $stmt = $pdo->prepare("SELECT * FROM admins WHERE (username = :u OR email = :u) AND status = 'active' LIMIT 1");
-            $stmt->execute(['u' => $username]);
+            $stmt = $pdo->prepare("SELECT * FROM admins WHERE (username = :u1 OR email = :u2) AND status = 'active' LIMIT 1");
+            $stmt->execute(['u1' => $username, 'u2' => $username]);
             $admin = $stmt->fetch();
 
             if ($admin && password_verify($password, $admin['password'])) {

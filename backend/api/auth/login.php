@@ -11,8 +11,8 @@ if (empty($username) || empty($password)) {
 }
 
 try {
-    $stmt = $pdo->prepare("SELECT * FROM admins WHERE (username = :user OR email = :user) AND status = 'active' LIMIT 1");
-    $stmt->execute(['user' => $username]);
+    $stmt = $pdo->prepare("SELECT * FROM admins WHERE (username = :user1 OR email = :user2) AND status = 'active' LIMIT 1");
+    $stmt->execute(['user1' => $username, 'user2' => $username]);
     $admin = $stmt->fetch();
 
     if ($admin && password_verify($password, $admin['password'])) {
